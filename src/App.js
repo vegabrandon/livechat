@@ -40,7 +40,7 @@ function SignIn() {
     auth.signInWithPopup(provider);
   }
   return (
-    <button className='btn btn-dark ' onClick={signInWithGoogle}> Sign in with Google</button>
+    <button className='btn btn-dark col-3' onClick={signInWithGoogle}> Sign in with Google</button>
   )
 }
 function SignOut() {
