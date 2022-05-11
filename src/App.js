@@ -90,12 +90,35 @@ function ChatRoom() {
     const { text, uid, photoURL } = prop.message;
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
-    return (
-      <div className={`message ${messageClass}`}>
-        <img src={photoURL} alt="" />
-        <p>{text}</p>
-      </div>
-    )
+    if (messageClass === 'received') {
+      return (
+        <div className='container'>
+          <div className='row'>
+            <div className="col-2"></div>
+            <div className='col-4'>
+              <img src={photoURL} alt="" />
+              <p>{text}</p>
+            </div>
+            <div className="col-6"></div>
+          </div>
+        </div>
+      );
+
+    } else {
+      return (
+        <div className='container'>
+          <div className='row'>
+            <div className="col-6"></div>
+            <div className='col-4'>
+              <img src={photoURL} alt="" />
+              <p>{text}</p>
+            </div>
+            <div className="col-2"></div>
+
+          </div>
+        </div>
+      );
+    }
   }
 }
 
